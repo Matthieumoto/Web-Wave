@@ -19,7 +19,7 @@ body {
     .fond {
         margin: -10px;
         width: 100%;
-        height: 2500px; /* La hauteur du fond */
+        height: 1900px; /* La hauteur du fond */
         position: absolute;
         background: linear-gradient(to top right,#66aaff, #000b52);
         background-size: 200% 200%;
@@ -40,8 +40,8 @@ body {
         position: absolute;
         top: 30%;
         left: -30%;
-        width: 100%;
-        height: 100%; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
+        width: 1500px;
+        height: 1500px; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
         z-index: 1;
         overflow: hidden;
     }
@@ -52,25 +52,6 @@ body {
         z-index: 1;
         background-color: #f5c562;
         width: 1500px;
-        height: 1500px;
-    }
-
-    .background-bubbles2 {
-        position: absolute;
-        top: 2000px;
-        left: 30%;
-        width: 100%;
-        height: 100%; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .bubble2 {
-        border-radius: 50%;
-        opacity: 1;
-        z-index: 1;
-        background-color: #ffffff;
-        width: 2000px;
         height: 1500px;
     }
     
@@ -146,12 +127,175 @@ body {
         max-width: 1000px;
     }
 
-    .vetement {
-        margin-top: 800px;
+    .vet{
+        margin-top: 400px;
         font-family: 'Grafton';
         text-align: right;
-        margin-right: 10%;
+        margin-right: 1%;
         font-size: 100px;
-        color:rgb(0, 0, 0)e;
+        color:rgb(0, 0, 0);
+    }
+
+    .lien {
+        margin-top: 20px;
+        font-family: 'Grafton';
+        text-align: right;
+        margin-right: 20%;
+        font-size: 30px;
+    }
+
+    .lien2 {
+        margin-top: 20px;
+        font-family: 'Grafton';
+        text-align: left;
+        margin-left: 1%;
+        font-size: 60px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 10px 20px; /* Ajustez les valeurs selon vos préférences */
+        background-color: #fbbc04; /* Couleur de fond jaune */
+        color: black; /* Couleur du texte noir */
+        text-decoration: none; /* Pas de soulignement */
+        border: 1px solid rgb(255, 255, 255); /* Bordure noire d'épaisseur 1px */
+        border-radius: 50px; /* Coins arrondis */
+        margin: 5px; /* Marge autour des liens */
+    }
+
+    a:hover{
+        color: #fbbc04;
+        background-color: black;
+    }
+
+    .un{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .deux{
+        bottom: -10px;
+    }
+
+    .sect1{
+        margin-top: -20%;
+        width: 100%;
+        height: 100vh; /* La hauteur du fond */
+        position: absolute;
+        background: linear-gradient(to top right,#66aaff, #000b52);
+        background-size: 200% 200%;
+        animation: shiftColors 30s infinite alternate linear;
+        z-index: -1;
+    }
+
+    .image-gallery {
+        margin-top: 50px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 300px; /* Hauteur de la galerie */
+    }
+    
+    .gallery-box {
+        flex-shrink: 0;
+        width: calc(100% / 5); /* Divise l'espace en trois pour chaque image */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s, opacity 0.5s; /* Ajoutez également la transition de l'opacité */
+        opacity: 0.5; /* Réduit l'opacité par défaut pour les images non sélectionnées */
+        margin: 0 10px; /* Espacement entre les images */
+        margin-bottom: 10px;
+    }
+    
+    .gallery-box img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .navigation-arrows {
+        position: absolute;
+        bottom: -350px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    .arrow {
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .arrow:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .code{
+        margin-top: 400px;
+        font-family: 'Grafton';
+        text-align: left;
+        margin-left: 1%;
+        font-size: 100px;
+        color:rgb(255, 255, 255);
+    }
+
+    .background-bubbles2 {
+        position: absolute;
+        top: 20%;
+        right: -10%;
+        width: 800px;
+        height: 800px; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .bubble2 {
+        border-radius: 50%;
+        opacity: 1;
+        z-index: 1;
+        background-color: #f5c562;
+        width: 800px;
+        height: 800px;
+    }
+
+    .palmier4 {
+        z-index: 2;
+        position: absolute;
+        right: 5%;
+        top: 0%;
+        animation: rotatepalmier3 6s linear alternate infinite;
+        transform-origin: bottom center;
+    }
+    
+    @keyframes rotatepalmier4 {
+        0% {
+          transform: rotate(-10deg);
+        }
+        100% {
+          transform: rotate(10deg);
+        }
+    }
+
+    .transate {
+        z-index: 2;
+        position: absolute;
+        right: 3%;
+        margin-top: 3%;
+        animation: rotatepalmier3 2s linear alternate infinite;
+        transform-origin: bottom center;
+    }
+    
+    @keyframes rotatepalmier4 {
+        0% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(5deg);
+        }
     }
 }
