@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Grafton';
+    src: url('font/zt-grafton-regular.ttf') format('truetype');
+}
+
+
+@media screen and (min-width:1024px) {
+    .titre {
+        font-family: 'Grafton';
+        text-align: center;
+        font-size: 100px;
+        color: white;
+        margin-top: 80px;
+    }
+
+    .background-bubbles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+      
+    .bubble {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation-duration: 10s; /* Durée de l'animation */
+        animation-fill-mode: forwards; /* Maintenir l'état final de l'animation */
+    }
+      
+    .bubble:nth-child(1) {
+        background-color: #8A2BE2;
+        width: 800px;
+        height: 800px;
+        top: -35%;
+        left: 30%;
+        animation: bubbleAnimation2 8s 1;
+    }
+      
+    .bubble:nth-child(2) {
+        background-color: #2600ff;
+        width: 1000px;
+        height: 1000px;
+        top: -10%;
+        left: -15%;
+        animation: bubbleAnimation2 15s 1;
+    }
+      
+    .bubble:nth-child(3) {
+        background-color: #FF00FF;
+        width: 1500px;
+        height: 1500px;
+        top: 30%;
+        left: -20%;
+        animation: bubbleAnimation3 12s 1;
+    }
+    
+    @keyframes bubbleAnimation1 {
+        from {
+            transform: translate(-30%, -35%);
+        }
+        to {
+            transform: translate(0, 0);
+        }
+    }
+      
+    @keyframes bubbleAnimation2 {
+        from {
+            transform: translate(-10%, -10%);
+        }
+        to {
+            transform: translate(0, 0);
+        }
+    }
+      
+    @keyframes bubbleAnimation3 {
+        from {
+          transform: translate(-20%, 30%);
+        }
+        to {
+            transform: translate(0, 0);
+        }
+    }
+}
