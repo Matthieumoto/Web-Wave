@@ -3,6 +3,9 @@
     src: url('font/zt-grafton-regular.ttf') format('truetype');
 }
 
+body {
+    overflow-x: hidden;
+}
 
 @media screen and (min-width:1024px) {
     .titre {
@@ -12,76 +15,143 @@
         color: white;
         margin-top: 80px;
     }
-
-    .background-bubbles {
-        position: fixed;
-        top: 0;
-        left: 0;
+    
+    .fond {
+        margin: -10px;
         width: 100%;
-        height: 100%;
+        height: 2500px; /* La hauteur du fond */
+        position: absolute;
+        background: linear-gradient(to top right,#66aaff, #000b52);
+        background-size: 200% 200%;
+        animation: shiftColors 30s infinite alternate linear;
+        z-index: -1;
+    }
+    
+    @keyframes shiftColors {
+        0% {
+          background-position: 0% 100%;
+        }
+        100% {
+          background-position: 100% 0%;
+        }
+    }
+    
+    .background-bubbles {
+        position: absolute;
+        top: 30%;
+        left: -30%;
+        width: 100%;
+        height: 100%; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .bubble1 {
+        border-radius: 50%;
+        opacity: 1;
+        z-index: 1;
+        background-color: #f5c562;
+        width: 1500px;
+        height: 1500px;
+    }
+
+    .background-bubbles2 {
+        position: absolute;
+        top: 2000px;
+        left: 30%;
+        width: 100%;
+        height: 100%; /* Ajuster la hauteur pour qu'elle couvre toute la fenêtre */
         z-index: -1;
         overflow: hidden;
     }
-      
-    .bubble {
-        position: absolute;
+
+    .bubble2 {
         border-radius: 50%;
-        opacity: 0.5;
-        animation-duration: 10s; /* Durée de l'animation */
-        animation-fill-mode: forwards; /* Maintenir l'état final de l'animation */
-    }
-      
-    .bubble:nth-child(1) {
-        background-color: #8A2BE2;
-        width: 800px;
-        height: 800px;
-        top: -35%;
-        left: 30%;
-        animation: bubbleAnimation2 8s 1;
-    }
-      
-    .bubble:nth-child(2) {
-        background-color: #2600ff;
-        width: 1000px;
-        height: 1000px;
-        top: -10%;
-        left: -15%;
-        animation: bubbleAnimation2 15s 1;
-    }
-      
-    .bubble:nth-child(3) {
-        background-color: #FF00FF;
-        width: 1500px;
+        opacity: 1;
+        z-index: 1;
+        background-color: #ffffff;
+        width: 2000px;
         height: 1500px;
-        top: 30%;
-        left: -20%;
-        animation: bubbleAnimation3 12s 1;
     }
     
-    @keyframes bubbleAnimation1 {
-        from {
-            transform: translate(-30%, -35%);
+    .palmier1 {
+        z-index: 2;
+        position: absolute;
+        left: -5%;
+        top: 20%;
+        animation: rotatepalmier1 4s linear alternate infinite;
+        transform-origin: bottom center;
+    }
+    
+    .palmier2 {
+        z-index: 2;
+        position: absolute;
+        left: 25%;
+        top: 40%;
+        animation: rotatepalmier2 5s linear alternate infinite;
+        transform-origin: bottom center;
+    }
+
+    .palmier3 {
+        z-index: 2;
+        position: absolute;
+        left: 5%;
+        top: 65%;
+        animation: rotatepalmier3 6s linear alternate infinite;
+        transform-origin: bottom center;
+    }
+    
+    @keyframes rotatepalmier1 {
+        0% {
+          transform: rotate(-10deg);
         }
-        to {
-            transform: translate(0, 0);
+        100% {
+          transform: rotate(10deg);
         }
     }
-      
-    @keyframes bubbleAnimation2 {
-        from {
-            transform: translate(-10%, -10%);
+    
+    @keyframes rotatepalmier2 {
+        0% {
+          transform: rotate(10deg);
         }
-        to {
-            transform: translate(0, 0);
+        100% {
+          transform: rotate(-10deg);
         }
     }
-      
-    @keyframes bubbleAnimation3 {
-        from {
-          transform: translate(-20%, 30%);
+
+    @keyframes rotatepalmier3 {
+        0% {
+          transform: rotate(10deg);
         }
-        to {
-            transform: translate(0, 0);
+        100% {
+          transform: rotate(-10deg);
         }
+    }
+    
+    .presentation {
+        font-family: 'Grafton';
+        text-align: right;
+        margin-right: 10%;
+        font-size: 60px;
+        color: white;
+    }
+    
+    .txt_presentation{
+        margin-top: -3%;
+        text-align: center;
+        margin-left: 55%;
+        margin-right: 1%;
+        font-size: 50px;
+        color: white;
+        max-width: 1000px;
+    }
+
+    .vetement {
+        margin-top: 800px;
+        font-family: 'Grafton';
+        text-align: right;
+        margin-right: 10%;
+        font-size: 100px;
+        color:rgb(0, 0, 0)e;
     }
 }
